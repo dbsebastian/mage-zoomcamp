@@ -16,9 +16,6 @@ root_path = f"{path_to_export}//{table_name}"
 @data_exporter
 def export_data(data, *args, **kwargs):
 
-    # Write your data as Parquet files to a bucket in GCP, partioned
-    #   by lpep_pickup_date. Use the pyarrow library!
-
     tabla = pa.Table.from_pandas(data)
 
     pq.write_to_dataset(
